@@ -1,5 +1,24 @@
+import Store from './services/Store.js';
+import API from './services/API.js'
+import { loadData } from './services/Menu.js';
+import Router from './services/Router.js';
+
+
 console.log('hello world')
 
+window.app = {}
+app.store = Store;
+app.router = Router;
+
+window.addEventListener('DOMContentLoaded', async() => {
+    // const menu = await API.fetchMenu(); instead of doing this - make it modular
+
+    // modular design
+    loadData();
+    app.router.init();
+}) 
+
+/*
 window.addEventListener('DOMContentLoaded', () => {
     console.log('DOMContentLoaded');
 
@@ -15,4 +34,4 @@ window.addEventListener('DOMContentLoaded', () => {
     HTMLElement.prototype.$ = (s) => this.querySelectorAll(s);
 
     console.log($);
-}) 
+}) */

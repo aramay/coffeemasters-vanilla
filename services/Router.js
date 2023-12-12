@@ -40,7 +40,7 @@ const Router = {
                     pageElement = document.createElement("h1")
                     pageElement.textContent = "Details"
 
-                    const paramId = route.substring(rote.lastIndexOf("-")+1);
+                    const paramId = route.substring(route.lastIndexOf("-")+1);
                     // pageElement.id = paramId;
                     pageElement.dataset.id = paramId;
                 }
