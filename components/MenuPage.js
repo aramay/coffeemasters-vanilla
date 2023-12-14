@@ -31,7 +31,6 @@ export class MenuPage extends HTMLElement {
         if (app.store.menu) {
             this.root.querySelector("#menu").innerHTML = "";
             for (let category of app.store.menu) {
-                console.log(category)
                 const liCategory = document.createElement('li');
                 liCategory.innerHTML = `
                     <h3>${category.name}</h3>
