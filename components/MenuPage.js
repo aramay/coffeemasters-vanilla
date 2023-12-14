@@ -31,7 +31,7 @@ export class MenuPage extends HTMLElement {
         if (app.store.menu) {
             this.root.querySelector("#menu").innerHTML = "";
             for (let category of app.store.menu) {
-                console.log(category.name)
+                console.log(category)
                 const liCategory = document.createElement('li');
                 liCategory.innerHTML = `
                     <h3>${category.name}</h3>
@@ -40,6 +40,14 @@ export class MenuPage extends HTMLElement {
                     </ul>
                 `;
                 this.root.querySelector("#menu").appendChild(liCategory);
+
+                // display Items in each category
+                category.products.forEach( (product) => {
+                    const item = document.createElement("product-item");
+                    item.dataset.product = JSON.stringify(product)
+
+                    liCategory.querySelector("ul").appendChild(item)
+                })
             }
         }
         else {
