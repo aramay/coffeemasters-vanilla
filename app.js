@@ -9,7 +9,8 @@ console.log('hello world')
 import { MenuPage } from './components/MenuPage.js'
 import { DetailsPage } from './components/DetailsPage.js';
 import { OrderPage } from './components/OrderPage.js';
-import ProductItem from './components/ProductItem.js'
+import { ProductItem } from './components/ProductItem.js'
+import { CartItem } from './components/CartItems.js';
 
 window.app = {}
 app.store = Store;
