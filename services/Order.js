@@ -11,9 +11,9 @@ export async function addToCart (id) {
 
         // return new array wiht one element changed
         app.store.cart = app.store.cart.map( 
-            product => product.id == id
-                ? {...product, quantity: product.quantity + 1}
-                : product
+            productInCart => productInCart.product.id == id
+                ? {...productInCart, quantity: productInCart.quantity + 1}
+                : productInCart
         )
     }
     else {
@@ -28,6 +28,6 @@ export async function addToCart (id) {
 
 export function removeFromCart(id) {
     app.store.cart = app.store.cart.filter( 
-        product => product.id != id
+        productInCart => productInCart.product.id != id
     )
 }
