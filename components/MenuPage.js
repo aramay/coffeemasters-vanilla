@@ -22,9 +22,14 @@ export class MenuPage extends HTMLElement {
         const content = template.content.cloneNode(true);
         this.root.appendChild(content)
 
+        // this render only works when data loads
+        // 
         window.addEventListener("appmenuchanged", () => {
             this.render();
         })
+
+        // render when user moves to a different page
+        // then click back button
     }
 
     render() {
